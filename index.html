@@ -1,0 +1,127 @@
+[⚠️ Suspicious Content] <!DOCTYPE html>
+<html lang="en">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      padding: 30px;
+    }
+
+    .accordion {
+      width: 600px;
+      margin: 10px auto;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .accordion-header {
+      background-color: #532A8C;
+      color: #F2F2F2;
+      padding: 15px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .accordion-header:hover,
+    .accordion-header.active {
+      background-color: #9D8ABB;
+    }
+
+    .arrow {
+      font-size: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-header.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      display: none;
+      background-color: #F2F2F2;
+      color: #333;
+      padding: 15px 20px;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+
+
+
+  <div class="accordion">
+    <div class="accordion-header">Eliminate <span class="arrow">▼</span></div>
+    <div class="accordion-content">
+      <p>Remove the hazard completely. This is the most effective control measure.</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header">Substitute <span class="arrow">▼</span></div>
+    <div class="accordion-content">
+      <p>Replace the hazard with a safer alternative. For example, use a less toxic chemical.</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header">Modify <span class="arrow">▼</span></div>
+    <div class="accordion-content">
+      <p>Change the way the work is done. This might involve redesigning a process or using different equipment.</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header">Isolate <span class="arrow">▼</span></div>
+    <div class="accordion-content">
+      <p>Separate the hazard from people. Examples include using machine guards or enclosures.</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header">Use Engineering Controls <span class="arrow">▼</span></div>
+    <div class="accordion-content">
+      <p>Incorporate technological solutions such as ventilation systems or noise dampeners.</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header">Use Administrative Controls <span class="arrow">▼</span></div>
+    <div class="accordion-content">
+      <p>Implement safe work procedures, training, job rotation, and signage.</p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header">Use Personal Protective Equipment (PPE) <span class="arrow">▼</span></div>
+    <div class="accordion-content">
+      <p>Provide workers with equipment like gloves, masks, and eye protection. This is the least effective control and should be used as a last resort.</p>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const isActive = header.classList.contains('active');
+
+        document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
+        document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
+
+        if (!isActive) {
+          header.classList.add('active');
+          content.style.display = 'block';
+        }
+      });
+    });
+  </script>
+
+
+</html>
+
